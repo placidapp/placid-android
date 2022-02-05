@@ -107,7 +107,7 @@ template.browserFrameLayer("browser") {
 These properties are supported by all layer types.
 
 ```kotlin
-template.textLayer(named: "title") {
+template.textLayer("title") {
     isHidden = false
     origin = Point(0,0)
     size = Size(100, 50)
@@ -124,6 +124,19 @@ viewModelScope.launch {
     val bitmap = template.render() //suspended function
 }
 ```
+
+### Chaining calls
+
+You can chain the calls to your template like this:
+
+```kotlin
+val bitmap = template.textLayer("title") {
+    text = "New Title"
+}.imageLayer("image") {
+    image = bitmap
+}.render()
+```
+
 
 ## Support
 
