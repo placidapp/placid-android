@@ -38,11 +38,12 @@ dependencies {
 
 ### Configuration
 
-Configure the Placid SDK in your `Application` class with:
+Configure the Placid SDK in your `Application` class by providing your license key and the raw ressource id of your Placid bundle that you downloaded from the web app:
+
 ```kotlin
 PlacidSDK.configure(
-    licenseKey = "placid-abc-xyz",
-    fileName = "placid_templates.placid",
+    licenseKey = "your-placid-license-key",
+    bundleResId = R.raw.placid_templates,
 )
 ```
 Use the optional parameter 'forceReload' in order to enforce the extraction of the Placid Bundle at every app start. By default this only happens when the app was updated (versionCode increased).
@@ -50,7 +51,7 @@ Additionally you can optionally pass in a logger function in order to receive er
 
 ### Retrieving Templates
 
-Templates can be retrieved via their unique identifier (as found in the placid web app). If the template is not found, this method will return null.
+Templates can be retrieved via their unique identifier (as found in the Placid web app). If the template is not found, this method will return null.
 ```kotlin
 val template = PlacidSDK.getTemplate("abcxyz")
 ```
