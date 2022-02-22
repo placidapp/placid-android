@@ -1,15 +1,36 @@
-# Placid Android SDK
+![Placid.app Android SDK](https://user-images.githubusercontent.com/4189032/155148667-3518959f-5c2b-4753-8929-0436a8cccf59.gif)
 
-Generate on-brand social media images automatically with [Placid](https://placid.app).
+<div align="center">
+  <h1>Placid Android SDK</h1>
+  <strong>Generate custom share images on-device</strong>
+  <br /><br />
 
-[![](https://jitpack.io/v/com.github.placidapp/android-sdk.svg)](https://jitpack.io/#com.github.placidapp/android-sdk)
+<p align="center">
+  <a href="https://jitpack.io/#com.github.placidapp/android-sdk"><img src="https://jitpack.io/v/com.github.placidapp/android-sdk.svg" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/minSdk-21-lightblue" /></a>
+</p>
 
-## Requirements
+</div>
+
+[Placid](https://placid.app) is a toolkit for creative automation. It lets you generate images with dynamic content from custom templates - e.g. for personalized share visuals. The Placid Android SDK offers native, on-device image generation for your apps.
+
+* Offline, on-device image generation
+* Custom templates for on-brand visuals
+* Drag & drop template editor
+* Dynamic content layers
+* Auto-resizing for text and images
+* Unlimited generated images
+* Dynamic in-app previews
+
+➡️ [Learn more about the Placid Mobile SDK](http://placid.app/solutions/mobile-sdk)
+
+---
+
+## ⚙️ Requirements
 
 - minSdk 21
 
-
-## Installation
+## 📦️ Installation
 
 Add the jitpack maven repository to your top level .gradle file:
 
@@ -24,7 +45,7 @@ allprojects {
 }
 ```
 
-Now, add the Placid dependeny to your application level .gradle file:
+Now, add the Placid dependency to your application level .gradle file:
 ```groovy
 dependencies {
     ...
@@ -33,12 +54,19 @@ dependencies {
 ```
 (Please replace ```x.y.z``` with the latest version numbers: ([![](https://jitpack.io/v/com.github.placidapp/android-sdk.svg)](https://jitpack.io/#com.github.placidapp/android-sdk))
 
+## ✨ Usage
 
-## Usage
+### Setup on placid.app
+
+1. Register for an account on [placid.app](https://placid.app)
+2. Create a project and add the mobile integration
+3. Add a template **OR** download the demo template package to test 🔍️
+4. Add a mobile license in the project settings
+5. Download your custom template package to use with the SDK
 
 ### Configuration
 
-Configure the Placid SDK in your `Application` class by providing your license key and the raw ressource id of your Placid bundle that you downloaded from the web app:
+Configure the Placid SDK in your `Application` class by providing your license key and the raw resource id of your Placid bundle that you downloaded from the Placid web app:
 
 ```kotlin
 PlacidSDK.configure(
@@ -49,7 +77,7 @@ PlacidSDK.configure(
 Use the optional parameter 'forceReload' in order to enforce the extraction of the Placid Bundle at every app start. By default this only happens when the app was updated (versionCode increased).
 Additionally you can optionally pass in a logger function in order to receive error logs regarding your configuration.
 
-### Retrieving Templates
+### Retrieve Templates
 
 Templates can be retrieved via their unique identifier (as found in the Placid web app). If the template is not found, this method will return null.
 ```kotlin
@@ -61,11 +89,11 @@ Alternatively you can also retrieve the template asynchronously. This might be u
 val template = PlacidSDK.getTemplateAsync("abcxyz")
 ```
 
-### Modify data
+### Modify Layer Data
 
-Templates can be customized using their specific layers.
+You can modify the content and appearance of dynamic layers in your template.
 
-:warning: The same layer name as in the web-editor has to be used, otherwise the layer will be ignored. 
+:warning: Use the layer names as specified in the template editor, otherwise the layer will be ignored.
 
 #### Text
 
@@ -103,7 +131,7 @@ template.browserFrameLayer("browser") {
 }
 ```
 
-### General Properties
+#### General Properties
 
 These properties are supported by all layer types.
 
@@ -115,10 +143,11 @@ template.textLayer("title") {
 }
 ```
 
-The mobile SDK supports the same layers and properties as the [API](https://placid.app/docs/2.0/rest/layers). So have a look for the full set of supported functions and properties.
+The mobile SDK supports the same layers and properties as the [Placid REST API](https://placid.app/docs/2.0/rest/layers), so have a look for the full set of supported functions and properties.
 
 ### Render Images
-Once all data is added to the specific template, it can be rendered to a native bitmap.
+
+Once all data is added to the template, it can be rendered to a native bitmap. Use it in your `ImageView`s for dynamic in-app views or pass it along for social sharing.
 
 ```kotlin
 viewModelScope.launch {
@@ -138,7 +167,6 @@ val bitmap = template.textLayer("title") {
 }.render()
 ```
 
-
-## Support
+## 💬 Support
 
 For bug reports, please create a new Issue right here on Github. Otherwise have a look at our [Help section](https://placid.app/help)
