@@ -1,4 +1,4 @@
-![Placid.app Android SDK](https://user-images.githubusercontent.com/4189032/155148667-3518959f-5c2b-4753-8929-0436a8cccf59.gif)
+![Placid.app Android SDK](https://user-images.githubusercontent.com/4189032/155292903-cc64e794-c04e-4a94-b9e7-cd52b7582c8f.gif)
 
 <div align="center">
   <h1>Placid Android SDK</h1>
