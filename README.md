@@ -58,11 +58,11 @@ dependencies {
 
 ### Setup on placid.app
 
-1. Register for an account on [placid.app](https://placid.app)
-2. Create a project and add the mobile integration
-3. Add a template **OR** download the demo template package to test 🔍️
-4. Add a mobile license in the project settings
-5. Download your custom template package to use with the SDK
+1. Register on [placid.app](https://placid.app) (✅ free trial)
+2. Create a project and add the Placid mobile integration
+3. Add a template
+4. Add a mobile license in your project settings
+5. Download your template(s) to use with the SDK
 
 ### Configuration
 
