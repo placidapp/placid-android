@@ -151,7 +151,7 @@ Once all data is added to the template, it can be rendered to a native bitmap. U
 
 ```kotlin
 viewModelScope.launch {
-    val bitmap = template.render() //suspended function
+    val bitmap = template.renderImage() //suspended function
 }
 ```
 
