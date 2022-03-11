@@ -164,7 +164,7 @@ val bitmap = template.textLayer("title") {
     text = "New Title"
 }.imageLayer("image") {
     image = bitmap
-}.render()
+}.renderImage()
 ```
 
 ## 💬 Support
