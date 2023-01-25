@@ -108,7 +108,7 @@ template.textLayer("title") {
 
 ```kotlin
 val newBitmap : Bitmap = ...
-template.imageLayer("avatar") {
+template.pictureLayer("avatar") {
     bitmap = newBitmap
 }
 ```
@@ -162,7 +162,7 @@ You can chain the calls to your template like this:
 ```kotlin
 val bitmap = template.textLayer("title") {
     text = "New Title"
-}.imageLayer("image") {
+}.pictureLayer("image") {
     image = bitmap
 }.renderImage()
 ```
